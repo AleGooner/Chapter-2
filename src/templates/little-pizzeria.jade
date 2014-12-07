@@ -1,1 +1,31 @@
+extends layouts/post.jade
+
+include mixins/comments.jade
+include mixins/popular.jade
+
+block title
+    | Little Pizzeria Review
+
+block author
+    | Ludwig van Beethoven
+
+block date
+    | Posted on January 18th, 2014 at 6:00 PM
+
+block image
+    img.img-responsive(src='images/little-pizzeria.png')
+
+block content
+    | Very fast delivery. Lorem ipsum Cillum elit dolor deserunt nulla aliquip sint proident ea pariatur nisi. Lorem ipsum Esse commodo veniam minim dolor Ut ea officia consectetur anim.
+
+block popular
+    - collection=[]
+    - collection.push({ link:'golden-dragon.html', text:'Golden Dragon' });
+    mixin popular(collection)
+
+block comments
+    - collection=[];
+    -  collection.push({ author:'Wolfgang Amadeus Mozart',date:'6:00 PM on January 18th, 2014',text:'Great Place. I recommend!'});
+mixin comments(collection)
+
 
